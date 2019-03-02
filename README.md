@@ -13,15 +13,10 @@ This is a reference application that predict labels for an image, using a pre-bu
 - Create a Lambda function from the CLI by running the following commands: 
 
 ```
-cd mxnet-lambda
+cd mxnet-lambda/src
 zip -9r lambda_function.zip  * 
-aws lambda update-function-code --function-name mxnet-lambda --zip-file fileb://lambda_function.zip
+aws lambda update-function-code --function-name opencv-lambda --zip-file fileb://lambda_function.zip
 
-```
-
-- Test the Lambda function: 
-```
-aws lambda invoke --invocation-type RequestResponse --function-name mxnet-lambda --region us-east-1 --log-type Tail --payload '{"url": "https://images-na.ssl-images-amazon.com/images/G/01/img15/pet-products/small-tiles/23695_pets_vertical_store_dogs_small_tile_8._CB312176604_.jpg"}' output_file
 ```
 
 ## Notes
